@@ -1,7 +1,21 @@
 void main(){
-  String s = 'leEeetcode';
-  for (int i = 0; i<=s.length;i++){
-    if (
+  var str = 'leetcode';
+
+  var s = [];
+  for(var i=0;i<str.length; i++){
+    s.add(str[i]); 
   }
-  
+  var s1 = [];
+  for (var ch in s){
+    if(s1.length == 0){
+      s1.add(ch);
+    }else{
+      if(s1[s1.length-1].codeUnitAt(0)+32 == ch.codeUnitAt(0) || s1[s1.length-1].codeUnitAt(0)-32 == ch.codeUnitAt(0)){
+        s1.removeLast();
+      }else{
+        s1.add(ch);
+      }
+    }
+  } 
+  print(s1.join());
 }
